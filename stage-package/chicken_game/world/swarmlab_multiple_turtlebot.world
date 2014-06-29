@@ -1,0 +1,72 @@
+resolution 0.02 # set the resolution of the underlying raytrace model in meters
+interval_sim 100 # simulation timestep in milliseconds
+#interval_real 100
+
+window
+( 
+  size [ 1066 852 ] 
+  scale 42.175 
+)
+
+define map model
+(
+  color "gray30"
+  boundary 0
+  gui_nose 0
+  gui_grid 0
+  gui_move 0
+  gui_outline 0
+  obstacle_return 1
+  gripper_return 0
+  fiducial_return 0
+#  laser_return 1
+)
+
+map
+(
+  name "circle_map"
+  size [10.900  17.750 0.500]
+  pose [0.000 0.000 0.000 0.000]
+  bitmap "circle_map.pgm"
+)
+
+define hokuyo ranger
+(
+  sensor(
+    range [0 10.0]
+    fov 230.25
+#     fov 60.00
+    samples 481
+  )
+  color "black"
+  size [ 0.050 0.050 0.100 ]
+  ctrl "lasernoise"
+)
+
+
+
+define turtlebot position
+(
+ # localisation "odom"
+  odom_error [0.01 0.05 0.01 0.02 0.5 1.0]
+  size [0.350 0.350 0.450]
+  origin [0.000 0.000 0.000 0.000]
+  gui_nose 1
+  drive "diff"
+  hokuyo(pose [ -0.200 0.000 0.000 0.000 ])
+  bitmap "robot.png"
+)
+
+turtlebot( pose [0.304 3.043 0.000 4.320] color "green")
+turtlebot( pose [2.901 1.513 0.000 -87.952] color "green")
+turtlebot( pose [0.093 -7.755 0.000 37.136] color "green")
+turtlebot( pose [2.183 -4.193 0.000 113.497] color "green")
+turtlebot( pose [4.102 -2.006 0.000 77.242] color "green")
+turtlebot( pose [-2.884 -4.112 0.000 -17.270] color "green")
+turtlebot( pose [-1.783 2.541 0.000 90.441] color "red")
+turtlebot( pose [-3.830 2.809 0.000 105.587] color "red")
+turtlebot( pose [-2.857 0.731 0.000 132.434] color "red")
+turtlebot( pose [-1.105 1.455 0.000 -20.896] color "red")
+turtlebot( pose [-0.801 4.236 0.000 -174.073] color "red")
+turtlebot( pose [-1.415 -0.036 0.000 -133.433] color "red")
+
