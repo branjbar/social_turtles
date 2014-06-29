@@ -6,31 +6,31 @@
 
 
 
-$> source /opt/ros/hydro/setup.bash
-$ cd ~/catkin_ws/src
-$ catkin_init_workspace
-$ cd ..
-$ catkin_make
+	$> source /opt/ros/hydro/setup.bash
+	$> cd ~/catkin_ws/src
+	$> catkin_init_workspace
+	$> cd ..
+	$> catkin_make
 
-$> cd ~/catkin_ws/src/
-$> catkin_create_pkg chicken_game roscpp rospy geometry_msgs sensor_msgs nav_msgs
-$> cd ..
-$> source devel/setup.bash
-$> roscd chicken_game
-   % copy the stage_random_walk.py file in the 'script' folder.
-$> chmod +x scripts/[name of your file]
-$> cd ../..
-$> catkin_make
-$> source devel/setup.bash
-$> rosrun chicken_game stage_random_walk.py
-or you can make a launch file in chicken_game folder as following
+	$> cd ~/catkin_ws/src/
+	$> catkin_create_pkg chicken_game roscpp rospy geometry_msgs sensor_msgs nav_msgs
+	$> cd ..
+	$> source devel/setup.bash
+	$> roscd chicken_game
+	% copy the stage_random_walk.py file in the 'script' folder.
+	$> chmod +x scripts/[name of your file]
+	$> cd ../..
+	$> catkin_make
+	$> source devel/setup.bash
+	$> rosrun chicken_game stage_random_walk.py
+	or you can make a launch file in chicken_game folder as following
 
-   <launch>
-     <node pkg="stage_ros" type="stageros" name="stageros" args="$(find chicken_game)/world/swarmlab_multiple_turtlebot.world" respawn="false" output="screen" />
-     <node pkg="chicken_game" type="stage_random_walk.py" name="robot_0"  output="screen" />
-     <node pkg="chicken_game" type="stage_random_walk.py" name="robot_1"  output="screen" />
-     <node pkg="chicken_game" type="stage_random_walk.py" name="robot_2" output="screen" />
-   </launch>
+		<launch>
+		<node pkg="stage_ros" type="stageros" name="stageros" args="$(find chicken_game)/world/swarmlab_multiple_turtlebot.world" respawn="false" output="screen" />
+		<node pkg="chicken_game" type="stage_random_walk.py" name="robot_0"  output="screen" />
+		<node pkg="chicken_game" type="stage_random_walk.py" name="robot_1"  output="screen" />
+		<node pkg="chicken_game" type="stage_random_walk.py" name="robot_2" output="screen" />
+		</launch>
 
 
 $> source devel/setup.bash
