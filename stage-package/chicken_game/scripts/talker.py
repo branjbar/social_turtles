@@ -8,7 +8,7 @@ import math as MT
 import time
 import os.path 
 
-save_path = "/home/bija/Dropbox/#PAPERS/Simulations/Turtlebot_Scripts/matlab/data"
+save_path = "/home/bija/Dropbox/#Supervision/2014_Irme_SocialTurtles/matlab"
 name_of_file = time.strftime("%c")
 name= os.path.join(save_path, name_of_file+".txt" )
 
@@ -25,8 +25,8 @@ rostime = 0
 def get_pose(msg):
     global rostime
     pose = {}    
-        pose['sin'] = msg.pose.pose.orientation.z
-        pose['cos'] = msg.pose.pose.orientation.w
+    pose['sin'] = msg.pose.pose.orientation.z
+    pose['cos'] = msg.pose.pose.orientation.w
     pose['theta'] = MT.atan(msg.pose.pose.orientation.z/msg.pose.pose.orientation.w)/MT.pi*360
     pose['x'] = msg.pose.pose.position.x
     pose['y'] = msg.pose.pose.position.y
