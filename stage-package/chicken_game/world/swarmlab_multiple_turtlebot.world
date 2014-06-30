@@ -5,7 +5,7 @@ interval_sim 100 # simulation timestep in milliseconds
 window
 ( 
   size [ 1066 852 ] 
-  scale 42.175 
+  scale 28.806 
 )
 
 define map model
@@ -24,10 +24,10 @@ define map model
 
 map
 (
-  name "circle_map"
-  size [10.900  17.750 0.500]
+  name "active_map"
+  size [20.900  27.750 0.500]
   pose [0.000 0.000 0.000 0.000]
-  bitmap "circle_map.pgm"
+  bitmap "maps/active_map.pgm"
 )
 
 define hokuyo ranger
@@ -57,16 +57,16 @@ define turtlebot position
   bitmap "robot.png"
 )
 
-turtlebot( pose [0.304 3.043 0.000 4.320] color "green")
-turtlebot( pose [2.901 1.513 0.000 -87.952] color "green")
-turtlebot( pose [0.093 -7.755 0.000 37.136] color "green")
-turtlebot( pose [2.183 -4.193 0.000 113.497] color "green")
-turtlebot( pose [4.102 -2.006 0.000 77.242] color "green")
-turtlebot( pose [-2.884 -4.112 0.000 -17.270] color "green")
-turtlebot( pose [-1.783 2.541 0.000 90.441] color "red")
-turtlebot( pose [-3.830 2.809 0.000 105.587] color "red")
-turtlebot( pose [-2.857 0.731 0.000 132.434] color "red")
-turtlebot( pose [-1.105 1.455 0.000 -20.896] color "red")
-turtlebot( pose [-0.801 4.236 0.000 -174.073] color "red")
-turtlebot( pose [-1.415 -0.036 0.000 -133.433] color "red")
+turtlebot( pose [-1.626 11.368 0.000 176.207] color "green")
+turtlebot( pose [2.336 11.531 0.000 -155.744] color "green")
+turtlebot( pose [6.603 -3.783 0.000 -133.788] color "green")
+turtlebot( pose [-0.282 -5.168 0.000 -165.325] color "green")
+turtlebot( pose [6.026 8.576 0.000 117.349] color "green")
+turtlebot( pose [3.689 -4.164 0.000 5.648] color "green")
+turtlebot( pose [-4.152 7.591 0.000 -1.232] color "red")
+turtlebot( pose [-3.867 3.054 0.000 -97.838] color "red")
+turtlebot( pose [-4.692 2.369 0.000 114.282] color "red")
+turtlebot( pose [-0.919 9.099 0.000 -26.626] color "red")
+turtlebot( pose [-0.655 5.855 0.000 104.749] color "red")
+turtlebot( pose [0.469 -1.107 0.000 -4.492] color "red")
 
