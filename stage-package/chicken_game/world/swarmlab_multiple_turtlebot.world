@@ -4,7 +4,7 @@ interval_sim 100 # simulation timestep in milliseconds
 
 window
 ( 
-  size [ 2495 1416 ] 
+  size [ 2493 1387 ] 
   scale 34.855 
 )
 
@@ -57,16 +57,26 @@ define turtlebot position
   bitmap "robot.png"
 )
 
-turtlebot( pose [-4.010 7.555 0.000 -69.150] color "green")
-turtlebot( pose [-4.786 6.996 0.000 -54.437] color "green")
-turtlebot( pose [-2.050 8.379 0.000 -151.838] color "green")
-turtlebot( pose [-8.080 -0.553 0.000 -102.249] color "green")
-turtlebot( pose [-0.637 9.525 0.000 147.975] color "green")
-turtlebot( pose [-6.956 5.498 0.000 -53.472] color "green")
-turtlebot( pose [-5.371 -7.443 0.000 -14.567] color "red")
-turtlebot( pose [5.337 10.050 0.000 -45.182] color "red")
-turtlebot( pose [-7.286 -3.290 0.000 157.279] color "red")
-turtlebot( pose [-7.590 0.923 0.000 -93.403] color "red")
-turtlebot( pose [4.162 10.936 0.000 -35.550] color "red")
-turtlebot( pose [-2.692 11.362 0.000 70.221] color "red")
+turtlebot( pose [3.533 11.387 0.000 51.171] color "green")
+turtlebot( pose [-1.548 10.358 0.000 31.507] color "green")
+turtlebot( pose [5.981 9.224 0.000 -71.624] color "green")
+turtlebot( pose [-8.523 -3.403 0.000 132.664] color "green")
+turtlebot( pose [2.041 11.937 0.000 5.699] color "green")
+turtlebot( pose [-8.201 5.609 0.000 124.145] color "green")
+turtlebot( pose [-6.742 8.228 0.000 131.385] color "green")
+turtlebot( pose [-7.363 2.855 0.000 -110.769] color "green")
+turtlebot( pose [-5.598 7.952 0.000 116.489] color "green")
+turtlebot( pose [-8.688 -3.068 0.000 -79.331] color "green")
+
+turtlebot( pose [-2.758 10.926 0.000 124.245] color "red")
+turtlebot( pose [-8.985 -0.629 0.000 -68.202] color "red")
+turtlebot( pose [8.028 -3.947 0.000 59.918] color "red")
+turtlebot( pose [5.974 8.235 0.000 -175.035] color "red")
+turtlebot( pose [0.908 -9.479 0.000 42.687] color "red")
+turtlebot( pose [-4.181 -10.184 0.000 -30.378] color "red")
+turtlebot( pose [-4.707 7.046 0.000 -114.801] color "red")
+turtlebot( pose [-3.097 11.538 0.000 -123.621] color "red")
+turtlebot( pose [8.350 5.004 0.000 53.032] color "red")
+turtlebot( pose [8.046 5.491 0.000 -67.289] color "red")
+
 
