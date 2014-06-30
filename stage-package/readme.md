@@ -17,7 +17,7 @@
 	$> cd ..
 	$> source devel/setup.bash
 	$> roscd chicken_game
-	% copy the stage_random_walk.py file in the 'script' folder.
+% copy the stage_random_walk.py file in the 'script' folder.
 	$> chmod +x scripts/[name of your file]
 	$> cd ../..
 	$> catkin_make
@@ -33,16 +33,16 @@
 		</launch>
 
 
-$> source devel/setup.bash
-$> roslaunch chicken_game chicken_game.launch
+	$> source devel/setup.bash
+	$> roslaunch chicken_game chicken_game.launch
 
 
 -----------------------------
 % now, you can edit your file using:
-$> rosed chicken_game stage_random_walk.py
+	$> rosed chicken_game stage_random_walk.py
 
 % the dependecies of the package can be reviewed by following command
-$> rospack depends1 chicken_game
+	$> rospack depends1 chicken_game
 
 
 
@@ -58,29 +58,29 @@ follow these links:
 % you can pull up messages using rqt_console instead of having to find
 % the console window with your Node's output.
 
-def listener():
-	rospy.init_node('listener',anonymous=True)
-	for i in xrange(10):
-    		a = rospy.Subscriber('robot_' + str(i) + "/base_pose_ground_truth", Odometry, get_pose)
+	def listener():
+		rospy.init_node('listener',anonymous=True)
+		for i in xrange(10):
+    			a = rospy.Subscriber('robot_' + str(i) + "/base_pose_ground_truth", Odometry, get_pose)
 
-	r = rospy.Rate(10) # 10hz
-	while not rospy.is_shutdown():
-		str = "hello world %s"%rospy.get_time()
-		rospy.loginfo(str)
-		talker(mode)
-		r.sleep()
+		r = rospy.Rate(10) # 10hz
+		while not rospy.is_shutdown():
+			str = "hello world %s"%rospy.get_time()
+			rospy.loginfo(str)
+			talker(mode)
+			r.sleep()
 
 % for main part of the python code we can use following
-if __name__ == '__main__':
-	global robot1, robot2, robot3
-	import sys
-	try:
-		robot1 = sys.argv[1]
-	except:
-		print 'ERROR: no robot_name provided, try: \n$$ python stdr_random_walk.py robot[XX] '
-		exit()
+	if __name__ == '__main__':
+		global robot1, robot2, robot3
+		import sys
+		try:
+			robot1 = sys.argv[1]
+		except:
+			print 'ERROR: no robot_name provided, try: \n$$ python stdr_random_walk.py robot[XX] '
+			exit()
 
-	print robot1, ' started to walk randomly.'
+		print robot1, ' started to walk randomly.'
 	try:
         	talker()
     	except rospy.ROSInterruptException:
