@@ -18,6 +18,7 @@ MIN_DISTANCE = 0.8 # obstacle avoidance distance, for simulator .5 works just fi
 halt_time = 0;
 opponent_distance = 1000; # initialize with a large number
 
+chicken_turn_direction = None  # initialization 
 
 def GetLaser(msg):
     GetLaser2(msg,robot_number)
