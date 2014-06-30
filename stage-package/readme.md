@@ -17,7 +17,9 @@
 	$> cd ..
 	$> source devel/setup.bash
 	$> roscd chicken_game
+	
 % copy the stage_random_walk.py file in the 'script' folder.
+
 	$> chmod +x scripts/[name of your file]
 	$> cd ../..
 	$> catkin_make
@@ -39,9 +41,11 @@
 
 -----------------------------
 % now, you can edit your file using:
+
 	$> rosed chicken_game stage_random_walk.py
 
 % the dependecies of the package can be reviewed by following command
+
 	$> rospack depends1 chicken_game
 
 
@@ -52,11 +56,13 @@ follow these links:
 * http://wiki.ros.org/ROS/Tutorials/WritingServiceClient%28python%29
 
 
-% standard rospy loop; the rospy.loginfo(str) performs triple-duty:
-% the messages get printed to screen, it gets written to the Node's log file,
-% and it gets written to rosout. rosout is a handy for debugging:
-% you can pull up messages using rqt_console instead of having to find
-% the console window with your Node's output.
+standard rospy loop; 
+
+the rospy.loginfo(str) performs triple-duty:
+the messages get printed to screen, it gets written to the Node's log file, and it gets written to rosout. 
+
+rosout is a handy for debugging: you can pull up messages using rqt_console instead of having to find the console window with your Node's output.
+
 
 	def listener():
 		rospy.init_node('listener',anonymous=True)
@@ -71,6 +77,7 @@ follow these links:
 			r.sleep()
 
 % for main part of the python code we can use following
+
 	if __name__ == '__main__':
 		global robot1, robot2, robot3
 		import sys
