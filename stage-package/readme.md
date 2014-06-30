@@ -1,4 +1,7 @@
- rosrun stage_ros stageros world/swarmlab_multiple_turtlebot.world
+Catkin Worspace
+
+
+	rosrun stage_ros stageros world/swarmlab_multiple_turtlebot.world
 
 
 ------------------------------------------------------------------------
@@ -48,6 +51,16 @@
 
 	$> rospack depends1 chicken_game
 
+
+
+Cloning the repository
+============================================
+
+After adding the ssh public key of the machine to github website, then I cloned the complete repository and made a symbol link to the package from the catkin worspace.
+	
+	git clone git@github.com:branjbar/social_turtles.git
+ 
+	ln -s ~/sandbox/social_turtles/stage-package/chicken_game/ ~/catkin_ws/src/chicken_game
 
 
 ------------------------------------------------------------------------
