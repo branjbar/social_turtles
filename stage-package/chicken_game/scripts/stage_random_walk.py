@@ -56,24 +56,24 @@ def CollisionDetect(msg):
     col_list = blackboard['neighbors_list']
     temp_flag = False
     for pair in col_list:
-        if int(robot_number) is  pair[0]:
+        if int(robot_number) is pair[0]:
             temp_flag = True
             opponent_distance = pair[2]
             
 
         if temp_flag:
-        chicken_mode = True
-        halt_time = halt_time + 1
+            chicken_mode = True
+            halt_time = halt_time + 1
 
-    else:
-        chicken_mode = False
-        halt_time = 0
+        else:
+            chicken_mode = False
+            halt_time = 0
 
 def listener():
         rospy.init_node('listener',anonymous=True)
         rospy.Subscriber('robot_'+ robot_number + "/base_scan", LaserScan, GetLaser)
         rospy.Subscriber("/chatter", String, CollisionDetect)
-    rospy.spin()
+        rospy.spin()
 
 def set_twist(x,z):
     twist = Twist()
