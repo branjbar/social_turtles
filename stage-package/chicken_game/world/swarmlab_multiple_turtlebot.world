@@ -4,8 +4,8 @@ interval_sim 100 # simulation timestep in milliseconds
 
 window
 ( 
-  size [ 2493 1387 ] 
-  scale 34.855 
+  size [ 744 524 ] 
+  scale 26.187 
 )
 
 define map model
@@ -27,7 +27,7 @@ map
   name "active_map"
   size [20.900  27.750 0.500]
   pose [0.000 0.000 0.000 0.000]
-  bitmap "maps/active_map.pgm"
+  bitmap "maps/sw_map.pgm"
 )
 
 define hokuyo ranger
@@ -57,26 +57,26 @@ define turtlebot position
   bitmap "robot.png"
 )
 
-turtlebot( pose [3.533 11.387 0.000 51.171] color "green")
-turtlebot( pose [-1.548 10.358 0.000 31.507] color "green")
-turtlebot( pose [5.981 9.224 0.000 -71.624] color "green")
-turtlebot( pose [-8.523 -3.403 0.000 132.664] color "green")
-turtlebot( pose [2.041 11.937 0.000 5.699] color "green")
-turtlebot( pose [-8.201 5.609 0.000 124.145] color "green")
-turtlebot( pose [-6.742 8.228 0.000 131.385] color "green")
-turtlebot( pose [-7.363 2.855 0.000 -110.769] color "green")
-turtlebot( pose [-5.598 7.952 0.000 116.489] color "green")
-turtlebot( pose [-8.688 -3.068 0.000 -79.331] color "green")
+turtlebot( pose [-1.637 9.595 0.000 -157.883] color "green")
+turtlebot( pose [1.962 -9.561 0.000 13.381] color "green")
+turtlebot( pose [-3.060 9.015 0.000 -65.742] color "green")
+turtlebot( pose [-2.732 -9.756 0.000 126.073] color "green")
+turtlebot( pose [-0.073 -11.846 0.000 -171.867] color "green")
+turtlebot( pose [6.964 -6.130 0.000 -166.998] color "green")
+turtlebot( pose [-5.938 8.216 0.000 76.979] color "green")
+turtlebot( pose [-2.398 -11.085 0.000 -52.357] color "green")
+turtlebot( pose [-8.296 2.944 0.000 -116.497] color "green")
+turtlebot( pose [-8.600 0.734 0.000 -136.576] color "green")
 
-turtlebot( pose [-2.758 10.926 0.000 124.245] color "red")
-turtlebot( pose [-8.985 -0.629 0.000 -68.202] color "red")
-turtlebot( pose [8.028 -3.947 0.000 59.918] color "red")
-turtlebot( pose [5.974 8.235 0.000 -175.035] color "red")
-turtlebot( pose [0.908 -9.479 0.000 42.687] color "red")
-turtlebot( pose [-4.181 -10.184 0.000 -30.378] color "red")
-turtlebot( pose [-4.707 7.046 0.000 -114.801] color "red")
-turtlebot( pose [-3.097 11.538 0.000 -123.621] color "red")
-turtlebot( pose [8.350 5.004 0.000 53.032] color "red")
-turtlebot( pose [8.046 5.491 0.000 -67.289] color "red")
+turtlebot( pose [-1.910 9.142 0.000 76.811] color "red")
+turtlebot( pose [5.237 7.161 0.000 20.505] color "red")
+turtlebot( pose [-8.829 -0.417 0.000 165.105] color "red")
+turtlebot( pose [-7.461 3.499 0.000 -107.167] color "red")
+turtlebot( pose [-4.575 8.981 0.000 48.518] color "red")
+turtlebot( pose [-4.366 10.267 0.000 65.148] color "red")
+turtlebot( pose [6.472 -6.805 0.000 168.890] color "red")
+turtlebot( pose [-1.999 10.620 0.000 -129.300] color "red")
+turtlebot( pose [-2.770 9.887 0.000 65.455] color "red")
+turtlebot( pose [5.450 8.165 0.000 -128.388] color "red")
 
 

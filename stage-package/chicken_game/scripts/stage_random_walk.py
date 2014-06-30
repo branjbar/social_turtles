@@ -14,7 +14,8 @@ MAX_ROTATION_SPEED = 1
 import random as RD
 
 COOPERATION = True
-MIN_DISTANCE = 0.8 # obstacle avoidance distance, for simulator .5 works just fine while for real robots we should stick to something like 1.0
+# the min_distance should be the same as the one in talker.py file!!
+MIN_DISTANCE = 1 # obstacle avoidance distance, for simulator .5 works just fine while for real robots we should stick to something like 1.0
 halt_time = 0;
 opponent_distance = 1000; # initialize with a large number
 chicken_turn_direction = None;
@@ -50,24 +51,22 @@ def GetLaser2(msg, robot_number):
 
     
 def CollisionDetect(msg):
-    global chicken_mode, opponent_distance, halt_time
-    
-    blackboard = eval(msg.data)
-    col_list = blackboard['neighbors_list']
-    temp_flag = False
-    for pair in col_list:
-        if int(robot_number) is pair[0]:
-            temp_flag = True
-            opponent_distance = pair[2]
-            
+	global chicken_mode, opponent_distance, halt_time
 
-        if temp_flag:
-            chicken_mode = True
-            halt_time = halt_time + 1
+	blackboard = eval(msg.data)
+	col_list = blackboard['neighbors_list']
+	temp_flag = False
+	for pair in col_list:
+		if int(robot_number) is pair[0]:
+		    temp_flag = True
+		    opponent_distance = pair[2]
 
-        else:
-            chicken_mode = False
-            halt_time = 0
+	if temp_flag:
+	    chicken_mode = True
+
+	else:
+	    chicken_mode = False
+	    halt_time = 0
 
 def listener():
         rospy.init_node('listener',anonymous=True)
@@ -88,35 +87,44 @@ def set_twist(x,z):
     return twist
 
 def talker(mode, robot_number):
-    
-    global chicken_turn_direction, halt_time
+	'''
+	determines the linear and angular twist according to mode (i.e., D or D), other obstacles, etc. 
+	'''
+	global chicken_turn_direction, halt_time
 
-    pub = rospy.Publisher('robot_' + robot_number + '/cmd_vel',Twist)
-    
-    if halt_time < 500:
-        if mode == "STRAIGHT":
-            twist = set_twist(MAX_SPEED,0)
-        if mode == "TURN CCW":
-            twist = set_twist(0,MAX_ROTATION_SPEED)    
-        if mode == "TURN CW":
-            twist = set_twist(0,-1*MAX_ROTATION_SPEED)    
-        if chicken_mode: 
-            if COOPERATION:
-                if not chicken_turn_direction:
-                    chicken_turn_direction = RD.choice([-1,1])
-                twist = set_twist(0,chicken_turn_direction * MAX_ROTATION_SPEED)
-            else: 
-                #print opponent_distance, MIN_DISTANCE
-                if opponent_distance < MIN_DISTANCE : 
-                    twist = set_twist(0,0)
-        else:
-            chicken_turn_direction = 0;
-    
-    else:
-        
-        twist = set_twist(-.3, RD.choice([-1,1]) * 20 * MAX_ROTATION_SPEED)
-        halt_time = halt_time - 0.05    
-    pub.publish(twist)
+	pub = rospy.Publisher('robot_' + robot_number + '/cmd_vel', Twist)
+	twist = set_twist(0,0)
+	
+	if halt_time < 100:
+		if chicken_mode: 
+		    if COOPERATION:
+			if not chicken_turn_direction:
+			    chicken_turn_direction = RD.choice([-1,1])
+			twist = set_twist(0, chicken_turn_direction * MAX_ROTATION_SPEED)
+		    else: 
+			#print opponent_distance, MIN_DISTANCE
+			if opponent_distance < MIN_DISTANCE : 
+				twist = set_twist(0,0)
+				halt_time = halt_time + 1
+		else:
+			chicken_turn_direction = 0;
+			halt_time = 0
+			if mode == "STRAIGHT":
+			    twist = set_twist(MAX_SPEED,0)
+			if mode == "TURN CCW":
+			    twist = set_twist(0,MAX_ROTATION_SPEED)    
+			if mode == "TURN CW":
+			    twist = set_twist(0,-1*MAX_ROTATION_SPEED)    
+
+	else:
+
+		if not chicken_turn_direction:
+			chicken_turn_direction = RD.choice([-1,1])
+		twist = set_twist(-.3, chicken_turn_direction * 1 * MAX_ROTATION_SPEED)
+		
+		halt_time = halt_time - .3
+ 
+	pub.publish(twist)
 
 
 if __name__ == '__main__':

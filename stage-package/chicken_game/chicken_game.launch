@@ -10,11 +10,11 @@
      <node name="robot_7" pkg="chicken_game" type="stage_random_walk.py"   args = "7C" output="screen" />
      <node name="robot_8" pkg="chicken_game" type="stage_random_walk.py"   args = "8C" output="screen" />
      <node name="robot_9" pkg="chicken_game" type="stage_random_walk.py"   args = "9C" output="screen" />
-     <node name="robot_10" pkg="chicken_game" type="stage_random_walk.py"  args = "10D" output="screen" />
-     <node name="robot_11" pkg="chicken_game" type="stage_random_walk.py"  args = "11D" output="screen" />
-     <node name="robot_12" pkg="chicken_game" type="stage_random_walk.py"  args = "12D" output="screen" />
-     <node name="robot_13" pkg="chicken_game" type="stage_random_walk.py"  args = "13D" output="screen" />
-     <node name="robot_14" pkg="chicken_game" type="stage_random_walk.py"  args = "14D" output="screen" />
+     <node name="robot_10" pkg="chicken_game" type="stage_random_walk.py"  args = "10C" output="screen" />
+     <node name="robot_11" pkg="chicken_game" type="stage_random_walk.py"  args = "11C" output="screen" />
+     <node name="robot_12" pkg="chicken_game" type="stage_random_walk.py"  args = "12C" output="screen" />
+     <node name="robot_13" pkg="chicken_game" type="stage_random_walk.py"  args = "13C" output="screen" />
+     <node name="robot_14" pkg="chicken_game" type="stage_random_walk.py"  args = "14C" output="screen" />
      <node name="robot_15" pkg="chicken_game" type="stage_random_walk.py"  args = "15D" output="screen" />
      <node name="robot_16" pkg="chicken_game" type="stage_random_walk.py"  args = "16D" output="screen" />
      <node name="robot_17" pkg="chicken_game" type="stage_random_walk.py"  args = "17D" output="screen" />

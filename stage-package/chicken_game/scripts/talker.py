@@ -56,9 +56,11 @@ def talker():
                     if x2 == x1:
                         x2 = x2 + .01
                     relative_theta = MT.atan2((y2 - y1),(x2-x1))/MT.pi*180
-                    if MT.fabs(x1 - x2) < CHICKEN_DIST  and  MT.fabs(y1-y2) < CHICKEN_DIST and MT.fabs(relative_theta - theta1) < 75:
+                    # either robots see each other from distance or are too close that line of sight doesn't matter			
+                    neighbors_distance = (MT.fabs(x1-x2) + MT.fabs(y1-y2))
+		    if (neighbors_distance < CHICKEN_DIST and MT.fabs(relative_theta - theta1) < 120) :
 #                        print relative_theta, theta1
-                        neighbors_distance = (MT.fabs(x1-x2) + MT.fabs(y1-y2))
+                        
                         neighbors_list.append([int(key1),int(key2), neighbors_distance ])
 
 #                    if int(key1) == 0 and int(key2) == 1:
