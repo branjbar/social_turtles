@@ -1,16 +1,24 @@
    <launch>
      <node pkg="stage_ros" type="stageros" name="stageros" args="$(find chicken_game)/world/swarmlab_multiple_turtlebot.world" respawn="false" output="screen" />
-     <node name="robot_0" pkg="chicken_game" type="stage_random_walk.py" args = "0C" output="screen" />
-     <node name="robot_1" pkg="chicken_game" type="stage_random_walk.py"  args = "1C" output="screen" />
-     <node name="robot_2" pkg="chicken_game" type="stage_random_walk.py"  args = "2C" output="screen" />
-     <node name="robot_3" pkg="chicken_game" type="stage_random_walk.py" args = "3C" output="screen" />
-     <node name="robot_4" pkg="chicken_game" type="stage_random_walk.py"  args = "4C" output="screen" />
-     <node name="robot_5" pkg="chicken_game" type="stage_random_walk.py"  args = "5C" output="screen" />
-     <node name="robot_6" pkg="chicken_game" type="stage_random_walk.py"  args = "6D" output="screen" />
-     <node name="robot_7" pkg="chicken_game" type="stage_random_walk.py"  args = "7D" output="screen" />
-     <node name="robot_8" pkg="chicken_game" type="stage_random_walk.py"  args = "8D" output="screen" />
-     <node name="robot_9" pkg="chicken_game" type="stage_random_walk.py" args = "9D" output="screen" />
+     <node name="robot_0" pkg="chicken_game" type="stage_random_walk.py"   args = "0C" output="screen" />
+     <node name="robot_1" pkg="chicken_game" type="stage_random_walk.py"   args = "1C" output="screen" />
+     <node name="robot_2" pkg="chicken_game" type="stage_random_walk.py"   args = "2C" output="screen" />
+     <node name="robot_3" pkg="chicken_game" type="stage_random_walk.py"   args = "3C" output="screen" />
+     <node name="robot_4" pkg="chicken_game" type="stage_random_walk.py"   args = "4C" output="screen" />
+     <node name="robot_5" pkg="chicken_game" type="stage_random_walk.py"   args = "5C" output="screen" />
+     <node name="robot_6" pkg="chicken_game" type="stage_random_walk.py"   args = "6C" output="screen" />
+     <node name="robot_7" pkg="chicken_game" type="stage_random_walk.py"   args = "7C" output="screen" />
+     <node name="robot_8" pkg="chicken_game" type="stage_random_walk.py"   args = "8C" output="screen" />
+     <node name="robot_9" pkg="chicken_game" type="stage_random_walk.py"   args = "9C" output="screen" />
      <node name="robot_10" pkg="chicken_game" type="stage_random_walk.py"  args = "10D" output="screen" />
      <node name="robot_11" pkg="chicken_game" type="stage_random_walk.py"  args = "11D" output="screen" />
+     <node name="robot_12" pkg="chicken_game" type="stage_random_walk.py"  args = "12D" output="screen" />
+     <node name="robot_13" pkg="chicken_game" type="stage_random_walk.py"  args = "13D" output="screen" />
+     <node name="robot_14" pkg="chicken_game" type="stage_random_walk.py"  args = "14D" output="screen" />
+     <node name="robot_15" pkg="chicken_game" type="stage_random_walk.py"  args = "15D" output="screen" />
+     <node name="robot_16" pkg="chicken_game" type="stage_random_walk.py"  args = "16D" output="screen" />
+     <node name="robot_17" pkg="chicken_game" type="stage_random_walk.py"  args = "17D" output="screen" />
+     <node name="robot_18" pkg="chicken_game" type="stage_random_walk.py"  args = "18D" output="screen" />
+     <node name="robot_19" pkg="chicken_game" type="stage_random_walk.py"  args = "19D" output="screen" />
      <node name="chatter" pkg="chicken_game" type="talker.py" output="screen" />
    </launch>

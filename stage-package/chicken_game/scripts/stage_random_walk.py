@@ -17,7 +17,7 @@ COOPERATION = True
 MIN_DISTANCE = 0.8 # obstacle avoidance distance, for simulator .5 works just fine while for real robots we should stick to something like 1.0
 halt_time = 0;
 opponent_distance = 1000; # initialize with a large number
-
+chicken_turn_direction = None;
 
 def GetLaser(msg):
     GetLaser2(msg,robot_number)
