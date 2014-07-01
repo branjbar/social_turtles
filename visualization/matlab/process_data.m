@@ -35,6 +35,7 @@ disp(C(end-30))
 disp(D(end-30))
 disp(C(end-30) / D(end-30))
 %% Statistics
+%% Statistics
 close all
 
 results_regular = [ 
@@ -65,8 +66,8 @@ subplot(121)
 plot([0.05, .25,.4, .5,.6 ,.75, .95], 10 * results_regular([1,2,3,4,5,6,7],1),'k.-')
 hold on
 plot([0.05, .25,.4, .5,.6 ,.75, .95], 10 * results_regular([1,2,3,4,5,6,7],2),'r.--')
-title('Regular Network')
-xlabel('Ratio of Cooperators over Defectors')
+title('Regular Environment')
+xlabel('Ratio of Cooperators to Defectors')
 ylabel('Average Fitness')
 legend('Cooperators','Defectors')
 xlim([.05,.95])
@@ -77,8 +78,8 @@ subplot(122)
 plot([0.05, .25,.4, .5,.6 ,.75, .95], 10 * results_smallworld([1,2,3,4,5,6,7],1),'k.-')
 hold on
 plot([0.05, .25,.4, .5,.6 ,.75, .95], 10 * results_smallworld([1,2,3,4,5,6,7],2),'r.--')
-title('Small World Network')
-xlabel('Ratio of Cooperators over Defectors')
+title('Small World Environment')
+xlabel('Ratio of Cooperators to Defectors')
 ylabel('Average Fitness')
 legend('Cooperators','Defectors')
 xlim([.05,.95])
@@ -90,18 +91,18 @@ ylim([0,.5])
 figure
 subplot(121)
 plot([0.05, .25,.4, .5,.6 ,.75, .95], results_regular([1,2,3,4,5,6,7],1)./results_regular([1,2,3,4,5,6,7],2),'r.--')
-title('Regular Network')
+title('Regular Environment')
 xlabel('Ratio of Cooperators over Defectors')
-ylabel('Ratio of F_c over F_d')
+ylabel('Ratio of F_c to F_d')
 xlim([.05,.95])
 ylim([0,4])
 
 
 subplot(122)
 plot([0.05, .25,.4, .5,.6 ,.75, .95], results_smallworld([1,2,3,4,5,6,7],1)./results_smallworld([1,2,3,4,5,6,7],2),'r.--')
-title('Small World Network')
+title('Small World Environment')
 xlabel('Ratio of Cooperators over Defectors')
-ylabel('Ratio of F_c over F_d')
+ylabel('Ratio of F_c to F_d')
 xlim([.05,.95])
 ylim([0,4])
 
