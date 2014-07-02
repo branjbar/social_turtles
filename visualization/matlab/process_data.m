@@ -35,7 +35,6 @@ disp(C(end-30))
 disp(D(end-30))
 disp(C(end-30) / D(end-30))
 %% Statistics
-%% Statistics
 close all
 
 results_regular = [ 
@@ -92,7 +91,7 @@ figure
 subplot(121)
 plot([0.05, .25,.4, .5,.6 ,.75, .95], results_regular([1,2,3,4,5,6,7],1)./results_regular([1,2,3,4,5,6,7],2),'r.--')
 title('Regular Environment')
-xlabel('Ratio of Cooperators over Defectors')
+xlabel('Ratio of Cooperators to Defectors')
 ylabel('Ratio of F_c to F_d')
 xlim([.05,.95])
 ylim([0,4])
@@ -101,12 +100,14 @@ ylim([0,4])
 subplot(122)
 plot([0.05, .25,.4, .5,.6 ,.75, .95], results_smallworld([1,2,3,4,5,6,7],1)./results_smallworld([1,2,3,4,5,6,7],2),'r.--')
 title('Small World Environment')
-xlabel('Ratio of Cooperators over Defectors')
+xlabel('Ratio of Cooperators to Defectors')
 ylabel('Ratio of F_c to F_d')
 xlim([.05,.95])
 ylim([0,4])
 
               
+
+
 
 
 
