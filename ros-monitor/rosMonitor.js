@@ -42,7 +42,8 @@ var robot_y = ""
 var robot_w = ""
 var robot_number = ""
 
-var comunication_dist = 1
+var comunication_dist = 1;
+var aging = 0.007;
 
 
 for (i=0; i<N; i++){
@@ -98,8 +99,8 @@ for (i=0; i<N; i++){
 
             if (distance_k > comunication_dist) {
 
-               if (network[robot_number][k] >= .005){
-                    network[robot_number][k] -= .005;
+               if (network[robot_number][k] >= aging){
+                    network[robot_number][k] -= aging;
                 }
                 else {
                     network[robot_number][k] = 0;

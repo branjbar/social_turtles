@@ -1,7 +1,7 @@
 //Make an SVG Container
 
-var width = 500;
-var height = 500;
+var width = 400;
+var height = 400;
 
 var N = 12;
 
@@ -63,8 +63,8 @@ for (i=0; i<12; i++) {
 
 // Weighted Network Visualization
 
-var net_width = 500;
-var net_height = 500;
+var net_width = width;
+var net_height = height;
 var net_svgContainer = d3.select("body").append("svg")
                     .attr("style", "outline: thin solid red;")
                     .attr("width", net_width)
@@ -133,12 +133,15 @@ var degree_dist = []
 
 for (i=0; i<dataset.nodes.length; i++) {
     degree_dist.push(dataset.nodes[i].degree);
-
 }
 
 var bins = 40;
 var degree_dist_hist = d3.layout.histogram().bins(x_bar_Scale.ticks(bins))(degree_dist)
 
+// Cumulative Degree Distribution
+for (i = degree_dist_hist.length-2; i>=0; i--) {
+    degree_dist_hist[i].y +=  degree_dist_hist[i+1].y
+}
 var degree_scale = d3.scale.linear().domain([0,20]).range([3,10])
 
 
@@ -155,6 +158,7 @@ var svg = d3.select("body")
 
 
 //Create bars
+
 svg.selectAll("rect")
    .data(degree_dist_hist)
    .enter()
@@ -181,7 +185,7 @@ svg.append("g")
 
 
 /*    Tick update (Bar chart and the force layout     */
-force.on("tick", function() {
+function ticking(){
 
     force.start()
 
@@ -221,6 +225,11 @@ force.on("tick", function() {
 
 
     var degree_dist_hist = d3.layout.histogram().bins(x_bar_Scale.ticks(bins))(degree_dist)
+    // Cumulative Degree Distribution
+    for (i = degree_dist_hist.length-2; i>=0; i--) {
+        degree_dist_hist[i].y +=  degree_dist_hist[i+1].y
+    }
+
     svg.selectAll("rect")
        .data(degree_dist_hist)
        .attr("y", function(d) {
@@ -233,4 +242,6 @@ force.on("tick", function() {
         return "rgb(0, 0, " +  Math.floor(100 + 155 * d.y / N) + ")";
           });
 
-});
+}
+
+var myInterval = window.setInterval(ticking, 500);
