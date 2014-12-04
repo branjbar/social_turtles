@@ -42,6 +42,8 @@ var robot_y = ""
 var robot_w = ""
 var robot_number = ""
 
+var comunication_dist = 1
+
 
 for (i=0; i<N; i++){
 
@@ -94,7 +96,7 @@ for (i=0; i<N; i++){
             distance_k = Math.sqrt(delta_x * delta_x + delta_y * delta_y)
 
 
-            if (distance_k > 1) {
+            if (distance_k > comunication_dist) {
 
                if (network[robot_number][k] >= .005){
                     network[robot_number][k] -= .005;
