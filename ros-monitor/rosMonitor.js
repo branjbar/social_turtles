@@ -59,15 +59,27 @@ for (i=0; i<N; i++){
        robot_x = parseFloat(message.pose.pose.position.x)
        robot_y = parseFloat(message.pose.pose.position.y)
        robot_w = parseFloat(message.pose.pose.orientation.w)
+       robot_z = parseFloat(message.pose.pose.orientation.z)
 
+
+       // change the circle which corresponds to the robot
        d3.select("#robot_x_" + robot_number)
-       .attr("cx", xscale(robot_x))
-       .attr("cy", yscale(robot_y))
-       .transition();
+           .attr("cx", xscale(robot_x))
+           .attr("cy", yscale(robot_y))
+           .transition();
+
+       // change the circle which corresponds to the robot
+       d3.select("#orientation_" + robot_number)
+           .attr("x1", xscale(robot_x))
+           .attr("y1", yscale(robot_y))
+           .attr("x2", xscale(robot_x) - robot_radius * (robot_z * robot_z  - robot_w * robot_w) )
+           .attr("y2", yscale(robot_y) - robot_radius * 2 * robot_w * robot_z );
+
 
 
        dataset.nodes[robot_number].coordination  = {"x": robot_x, "y": robot_y, "w": robot_w};
 
+       // k is number of neighboring robots
        for (k=robot_number + 1; k < N; k++) {
 
            d3.select("#edge" + robot_number + "_" + k)

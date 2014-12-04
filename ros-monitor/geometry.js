@@ -31,8 +31,24 @@ var yscale = d3.scale.linear()
                 .domain([-10, 10])
                 .range([height, 0]);
 
-
+var robot_radius = 6
 for (i=0; i<12; i++) {
+
+    // put a circle for each node
+    svgContainer.append("circle")
+                .attr("id", "robot_x_" + i)
+                .attr("cx", 20)
+                .attr("cy", 5)
+                .attr("r", robot_radius)
+                .attr("fill", colors(i));
+
+    // put a line for direction of robot
+    svgContainer.append("line")
+                .attr("id", "orientation_" + i)
+                .attr("stroke-width", .4)
+                .attr("stroke", "black");
+
+
     // for every two nodes, make a link in between
     for (k=0; k<12; k++){
 
@@ -42,13 +58,6 @@ for (i=0; i<12; i++) {
                     .attr("stroke", "");
     }
 
-    // put a circle for each node
-    svgContainer.append("circle")
-                .attr("id", "robot_x_" + i)
-                .attr("cx", 20)
-                .attr("cy", 5)
-                .attr("r", 6)
-                .attr("fill", colors(i));
 
 }
 
